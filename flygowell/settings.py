@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['flygowell.onrender.com', '127.0.0.1', 'localhost',]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -165,3 +165,6 @@ AUTHENTICATION_BACKENDS = [
     'home.backends.CaseInsensitiveModelBackend',  # custom backend
     'django.contrib.auth.backends.ModelBackend', # keep default as fallback
 ]
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
